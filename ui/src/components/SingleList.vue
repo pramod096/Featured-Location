@@ -7,3 +7,12 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "SingleList",
+  props: {
+    title: String,
+  },
+};
+</script>
