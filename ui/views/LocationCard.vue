@@ -64,4 +64,8 @@ export default {
     -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
 
+.detail {
+  margin: 0.5rem 0rem;
+}
+
 </style>
