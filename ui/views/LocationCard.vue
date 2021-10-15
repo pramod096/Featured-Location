@@ -32,3 +32,8 @@
     </router-link>
   </div>
 </template>
+
+<script>
+export default {
+  name: "LocationCard",
+</script>
