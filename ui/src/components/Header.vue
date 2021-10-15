@@ -31,3 +31,10 @@ export default {
   name: "Header",
 };
 </script>
+
+<style scoped>
+.container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+</style>
