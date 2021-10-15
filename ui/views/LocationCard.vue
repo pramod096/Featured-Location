@@ -37,3 +37,17 @@
 export default {
   name: "LocationCard",
 </script>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.card {
+  width: 26rem;
+  height: 35rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  border-radius: 22px;
+  background-color: #e0e5ec;
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
