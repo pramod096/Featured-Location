@@ -69,6 +69,7 @@ export default {
 
 .logo {
   color: #363233;
+  font-size: 1.8rem;
   font-family: Luminari, fantasy;
   font-weight: 100;
   text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
