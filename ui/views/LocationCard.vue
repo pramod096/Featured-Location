@@ -68,4 +68,18 @@ export default {
   margin: 0.5rem 0rem;
 }
 
+.btn {
+  height: 4.2rem;
+  width: 4.2rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  margin-right: 1rem;
+  border-radius: 2rem;
+  background-color: #e0e5ec;
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
 </style>
