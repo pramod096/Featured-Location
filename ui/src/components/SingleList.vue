@@ -37,5 +37,15 @@ export default {
   box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
     -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
+span {
+  color: #363233;
+  font-size: 1.5rem;
+  font-family: Luminari, fantasy;
+  font-weight: 100;
+  text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  outline: none;
+  border: none;
+}
 
 </style>
