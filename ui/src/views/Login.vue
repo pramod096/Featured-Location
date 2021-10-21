@@ -26,5 +26,11 @@
             id="password"
             placeholder="Enter Password"
           />
+          <router-link to="/allLocations" tag="button">
+          <button class="button">Login</button>
+        </router-link>
+      </form>
+      <router-link to="/">Forgot Password</router-link>
+    </div>
         </div>
 </template>
