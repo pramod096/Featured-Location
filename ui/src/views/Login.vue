@@ -55,4 +55,17 @@ export default {
   box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
     -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
+
+.card-header {
+  font-weight: 100;
+  font-family: Luminari, fantasy;
+  font-size: 1.8rem;
+  border: none;
+  outline: none;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  background-color: #e0e5ec;
+  margin: 2rem 0rem;
+}
+
 </style>
