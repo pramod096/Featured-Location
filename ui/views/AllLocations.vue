@@ -42,3 +42,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.list {
+  margin: 1.5rem;
+}
+</style>
