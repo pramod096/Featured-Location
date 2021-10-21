@@ -25,5 +25,8 @@
         </svg>
         264
       </button>
-    </div>
+      <router-link to="/allLocations" tag="button">
+      <button class="button">View All</button>
+    </router-link>
+  </div>
 </template>
