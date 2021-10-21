@@ -36,6 +36,17 @@
 <script>
 export default {
   name: "LocationCard",
+  data() {
+    return {
+      likes: 0,
+    };
+  },
+  methods: {
+    onLike() {
+      this.likes += 1;
+    },
+  },
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
