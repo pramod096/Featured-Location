@@ -4,14 +4,15 @@
   "description": "A Progressive Web Application, to suggest users about locations to visit in Maryville, Missouri.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pramod096/Featured-Location.git"
   },
   "author": "Pramod",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pramod096/Featured-Location/issues"
   },
