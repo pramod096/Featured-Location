@@ -1,5 +1,5 @@
 <template>
-<div class="container text-center">
+  <div class="container text-center">
     <div class="card mx-auto">
       <div class="card-header">
         <span>LOGIN</span>
@@ -26,13 +26,14 @@
             id="password"
             placeholder="Enter Password"
           />
-          <router-link to="/allLocations" tag="button">
+        </div>
+        <router-link to="/allLocations" tag="button">
           <button class="button">Login</button>
         </router-link>
       </form>
       <router-link to="/">Forgot Password</router-link>
     </div>
-        </div>
+  </div>
 </template>
 
 <script>
