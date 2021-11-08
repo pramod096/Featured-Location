@@ -18,6 +18,14 @@ router.post('/', async (req, res) => {
     res.status(201).send();
   });
 
+  router.delete('/', async (req, res) => {
+    const locations = await getLocationsCollection();
+    await locations.deleteOne({
+      _id: req.body._id,
+    });
+    res.status(201).send();
+  });
+
 
 async function getLocationsCollection() {
 
