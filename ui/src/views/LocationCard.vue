@@ -57,6 +57,7 @@ export default {
   height: 35rem;
   font-weight: bold;
   font-size: 0.9rem;
+  margin-bottom: 2rem;
   border: none;
   outline: none;
   border-radius: 22px;
