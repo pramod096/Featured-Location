@@ -14,7 +14,7 @@
           <router-link to="/" tag="button">
             <button class="button">Home</button>
           </router-link>
-          <router-link to="/login" tag="button">
+          <router-link to="/signUp" tag="button">
             <button class="button">Sign Up</button>
           </router-link>
           <router-link to="/login">
