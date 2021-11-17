@@ -5,7 +5,7 @@
         class="link"
         href="https://github.com/pramod096/Featured-Location"
         target="_blank"
-        >Source Repo</a
+        >Source</a
       >
     </div>
     <div class="col-sm-3">
@@ -13,7 +13,7 @@
         class="link"
         href="https://github.com/pramod096/Proposal-4B/projects/1"
         target="_blank"
-        >Work Plan</a
+        >Board</a
       >
     </div>
     <div class="col-sm-3">
