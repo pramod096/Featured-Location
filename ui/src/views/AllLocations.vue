@@ -1,6 +1,6 @@
 <template>
   <div class="conatiner">
-    <div class="list" v-for="title in titles" :key="title">
+    <div class="list" v-for="title in titles" :key="title" @click="openCard">
       <SingleList :title="title" />
     </div>
   </div>
@@ -9,6 +9,7 @@
 <script>
 import LocationService from "../LocationService";
 import SingleList from "../components/SingleList.vue";
+import router from "@/router";
 export default {
   components: { SingleList },
   name: "AllLocations",
@@ -39,6 +40,12 @@ export default {
       this.titles.push(titles[i].name);
       console.log(this.titles);
     }
+  },
+
+  methods: {
+    async openCard() {
+      router.push("/");
+    },
   },
 };
 </script>
