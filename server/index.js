@@ -12,12 +12,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const locations = require('./routes/api/locations');
-const users = require('./routes/api/users')
-const images = require('./routes/api/images')
+// const users = require('./routes/api/users')
+// const images = require('./routes/api/images')
 
 app.use('/api/locations', locations);
-app.use('/api/users', users);
-app.use('/api/images', images);
+// app.use('/api/users', users);
+// app.use('/api/images', images);
 
 app.post('/upload', upload.single('photo'), async (req, res) => {
     const images = await getImagesCollection();
