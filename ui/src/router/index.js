@@ -3,6 +3,7 @@ import LocationCard from '../views/LocationCard'
 import AllLocations from '../views/AllLocations'
 import Login from '../views/Login'
 import SignUp from '../views/SignUp.vue'
+import imageUpload from '../views/imageupload.vue'
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/signUp',
         name: 'SignUp',
         component: SignUp,
+      },
+      {
+        path: '/imageUpload',
+        name: 'ImageUpload',
+        component: imageUpload,
       }
     ]
     const router = createRouter({
