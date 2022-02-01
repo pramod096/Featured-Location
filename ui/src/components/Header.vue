@@ -14,10 +14,10 @@
           <router-link to="/" tag="button">
             <button class="button">Home</button>
           </router-link>
-          <router-link to="/imageUpload" tag="button">
+          <router-link to="/SignUp" tag="button">
             <button class="button">Sign Up</button>
           </router-link>
-          <router-link to="/login">
+          <router-link to="/imageUpload">
             <button class="button">Login</button>
           </router-link>
         </div>
