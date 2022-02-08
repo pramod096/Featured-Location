@@ -81,10 +81,10 @@ export default {
 
   methods: {
     async login() {
-      try{
-      await this.auth0.loginWithPopup({});
-      }catch(e) {
-        window.alert("Login Cancelled")
+      try {
+        await this.auth0.loginWithPopup({});
+      } catch (e) {
+        window.alert("Login Cancelled");
       }
 
       this.data = await this.auth0.getUser();
