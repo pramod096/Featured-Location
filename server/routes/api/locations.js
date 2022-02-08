@@ -20,14 +20,26 @@ const router = express.Router();
 
 //Get Locations
 router.get('/', async (req, res) => {
-    const locations = await getLocationsCollection();
+    const locations =  await getLocationsCollection();
     res.send(await locations.find({}).toArray());
 });
 
-router.post('/', async (req, res) => {
-    const locations = await getLocationsCollection();
+router.post('/', multerUploads, async (req, res) => {
+  if(req.file) {
+    const locations =  await getLocationsCollection();
+    const file = 'data:image/png;base64,' + (req.file.buffer).toString('base64')
+56	
+  return uploader.upload(file).then(async (result) => {
+57	
+  const image = result.url;
+58	
+  const locations =  await getLocationsCollection();
     await locations.insertOne({
-      name: req.body.name,
+      locationName: req.body.locationName,
+      address: req.body.address,	
+          hours: req.body.hours,
+          phoneNumber: req.body.phoneNumber,	
+          photo: image
     });
     res.status(201).send();
   });
