@@ -27,12 +27,9 @@ router.get('/', async (req, res) => {
 router.post('/', multerUploads, async (req, res) => {
   if(req.file) {
     const locations =  await getLocationsCollection();
-    const file = 'data:image/png;base64,' + (req.file.buffer).toString('base64')
-56	
+    const file = 'data:image/png;base64,' + (req.file.buffer).toString('base64')	
   return uploader.upload(file).then(async (result) => {
-57	
   const image = result.url;
-58	
   const locations =  await getLocationsCollection();
     await locations.insertOne({
       locationName: req.body.locationName,
@@ -41,7 +38,19 @@ router.post('/', multerUploads, async (req, res) => {
           phoneNumber: req.body.phoneNumber,	
           photo: image
     });
-    res.status(201).send();
+    return res.status(200).json({
+      messge: 'Your image has been uploded successfully to cloudinary',
+  data: {	
+  image	
+  }
+  })	
+  }).catch((err) => res.status(400).json({	
+  messge: 'someting went wrong while processing your request',
+  data: {	
+  err	
+  }	
+  }))	
+  }
   });
 
   router.delete('/', async (req, res) => {
@@ -56,7 +65,7 @@ router.post('/', multerUploads, async (req, res) => {
 async function getLocationsCollection() {
 
     const client = await mongodb.MongoClient.connect(
-        'mongodb+srv://Pramod:16181@featuredlocation.b28gj.mongodb.net/FeaturedLocation?retryWrites=true&w=majority',
+      process.env.ATLAS_CONNECTION_STRING,
         {
           useNewUrlParser: true
         }
@@ -65,8 +74,4 @@ async function getLocationsCollection() {
       return client.db('FeaturedLocation').collection('locations');
 
 }
-
-
-
-
 module.exports = router;
