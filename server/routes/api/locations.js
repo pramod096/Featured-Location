@@ -1,6 +1,20 @@
 const express = require('express');
 const mongodb = require('mongodb');
 
+require('dotenv').config();
+const multer = require('multer')
+// const upload = multer({ dest: __dirname + '/uploads'})	
+const storage = multer.memoryStorage();
+const multerUploads = multer({ storage: storage }).single('photo');	
+const { uploader } = require('cloudinary')	
+const cloudinary = require('cloudinary')	
+require('dotenv').config();	
+cloudinary.config({	
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,	
+  api_key: process.env.CLOUDINARY_API_KEY,	
+  api_secret: process.env.CLOUDINARY_API_SECRET	
+});
+
 const router = express.Router();
 
 
