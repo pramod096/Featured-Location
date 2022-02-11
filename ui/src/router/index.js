@@ -4,6 +4,7 @@ import AllLocations from '../views/AllLocations'
 import Login from '../views/Login'
 import SignUp from '../views/SignUp.vue'
 import imageUpload from '../views/imageupload.vue'
+import AddLocation from '../views/AddLocation.vue'
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         path: '/signUp',
         name: 'SignUp',
         component: SignUp,
+      },
+      {
+        path: '/addLocation',
+        name: 'AddLocation',
+        component: AddLocation,
       },
       {
         path: '/imageUpload',
