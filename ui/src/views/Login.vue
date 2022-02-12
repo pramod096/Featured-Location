@@ -39,8 +39,52 @@
 </template>
 
 <script>
+import UserService from "../UserService";
+import router from "@/router";
+
 export default {
   name: "Login",
+  data() {
+    return {
+      userName: "",
+      password: "",
+    };
+  },
+  methods: {
+    /**
+     * @vuese
+     * Used to manually clear the form
+     * @arg The argument is a boolean value representing xxx
+     */
+    async submit() {
+      console.log("signed");
+      let users = null;
+      let valid = false;
+
+      try {
+        users = await UserService.getUsers();
+        users = users.data;
+        console.log(users);
+      } catch (err) {
+        window.alert(err);
+      }
+
+      for (let i = 0; i < users.length; i++) {
+        if (
+          users[i].userName == this.userName &&
+          users[i].password == this.password
+        ) {
+          valid = true;
+          break;
+        }
+      }
+
+      if (!valid) window.alert("Invalid Username or Password");
+      else {
+        router.push("/allLocations");
+      }
+    },
+  },
 };
 </script>
 
