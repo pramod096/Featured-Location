@@ -17,7 +17,11 @@ class LocationService {
 
           return data;
       }
+      static async postLocation(formData) {
 
+        axios.post(url, formData)
+
+    }
 }
 
 export default LocationService;

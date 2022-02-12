@@ -12,14 +12,31 @@
       <div class="collapse navbar-collapse" id="expandNav">
         <div class="navbar-nav ml-auto">
           <router-link to="/" tag="button">
-            <button class="button">Home</button>
+            <button class="button" v-if="!null">Home</button>
           </router-link>
-          <router-link to="/SignUp" tag="button">
+          <router-link
+            to="/SignUp"
+            tag="button"
+            v-if="!authenticated && !this.loading"
+          >
             <button class="button">Sign Up</button>
           </router-link>
-          <router-link to="/imageUpload">
-            <button class="button">Login</button>
-          </router-link>
+
+          <button
+            class="button"
+            @click="login"
+            v-if="!authenticated && !this.loading"
+          >
+            Login
+          </button>
+
+          <button
+            class="button"
+            @click="logout"
+            v-if="authenticated && !this.loading"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </nav>
@@ -27,8 +44,72 @@
 </template>
 
 <script>
+import createAuth0Client from "@auth0/auth0-spa-js";
+import config from "../../auth_config.json";
 export default {
   name: "Header",
+  data() {
+    return {
+      auth0: null,
+      data: null,
+      loading: true,
+      authenticated: false,
+    };
+  },
+  async mounted() {
+    this.auth0 = await this.$auth0;
+
+    this.data = await this.auth0.getUser();
+
+    if (this.data == undefined) {
+      this.authenticated = false;
+    } else {
+      this.authenticated = true;
+    }
+
+    this.loading = false;
+
+    console.log("mounted auth0", this.auth0);
+    console.log("mounted data", this.data);
+    console.log("mounted aunthenti", this.authenticated);
+  },
+  // await this.user.loginWithPopup({});
+
+  // this.data = await this.user.getUser();
+
+  // console.log(this.data);
+
+  methods: {
+    async login() {
+      try {
+        await this.auth0.loginWithPopup({});
+      } catch (e) {
+        window.alert("Login Cancelled");
+      }
+
+      this.data = await this.auth0.getUser();
+
+      console.log("login data", this.data);
+
+      if (this.data == undefined) {
+        this.authenticated = false;
+      } else {
+        this.authenticated = true;
+      }
+    },
+
+    async logout() {
+      await this.auth0.logout({});
+
+      this.data = await this.auth0.getUser();
+
+      if (this.data == undefined) {
+        this.authenticated = false;
+      } else {
+        this.authenticated = true;
+      }
+    },
+  },
 };
 </script>
 
