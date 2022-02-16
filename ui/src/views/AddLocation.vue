@@ -74,7 +74,27 @@
   </div>
 </template>
 
+<script>
+import LocationService from "../LocationService";
+import router from "@/router";
 
-
+export default {
+  name: "SignUp",
+  data() {
+    return {
+      locationName: "",
+      address: "",
+      hours: "",
+      phoneNumber: "",
+    };
+  },
+  methods: {
+    async submit() {
+      await LocationService.postLocation(new FormData(locationForm));
+      console.log("form dat ----", new FormData(locationForm));
+    },
+  },
+};
+</script>
 
 
