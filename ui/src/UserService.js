@@ -18,7 +18,14 @@ class UserService {
           return data;
       }
 
+    static async postUser(userName, email, password) {
 
+        axios.post(url, {
+           userName, email, password
+        })
+
+     
+    }
 
     
 
