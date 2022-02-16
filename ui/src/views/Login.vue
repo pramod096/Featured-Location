@@ -4,41 +4,87 @@
       <div class="card-header">
         <span>LOGIN</span>
       </div>
-      <form>
-        <div class="form-group">
-          <label for="email">Email ID</label>
+      <form @submit.prevent="submit">
+        <div>
+          <label for="userName">Username</label>
           <input
-            type="email"
+            v-model="userName"
+            type="text"
             class="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
+            id="userName"
+            placeholder="Enter Username"
+            required
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
+          <small id="userName" class="form-text text-muted"
+            >We'll never share your Username with anyone else.</small
           >
         </div>
-        <div class="form-group">
+        <div>
           <label for="password">Password</label>
           <input
+            v-model="password"
             type="password"
             class="form-control"
             id="password"
             placeholder="Enter Password"
+            required
           />
         </div>
-        <router-link to="/allLocations" tag="button">
-          <button class="button">Login</button>
-        </router-link>
+
+        <button class="button" type="submit">Login</button>
       </form>
-      <router-link to="/">Forgot Password</router-link>
+      <router-link to="/login">Forgot Password</router-link>
     </div>
   </div>
 </template>
 
 <script>
+import UserService from "../UserService";
+import router from "@/router";
+
 export default {
   name: "Login",
+  data() {
+    return {
+      userName: "",
+      password: "",
+    };
+  },
+  methods: {
+    /**
+     * @vuese
+     * Used to manually clear the form
+     * @arg The argument is a boolean value representing xxx
+     */
+    async submit() {
+      console.log("signed");
+      let users = null;
+      let valid = false;
+
+      try {
+        users = await UserService.getUsers();
+        users = users.data;
+        console.log(users);
+      } catch (err) {
+        window.alert(err);
+      }
+
+      for (let i = 0; i < users.length; i++) {
+        if (
+          users[i].userName == this.userName &&
+          users[i].password == this.password
+        ) {
+          valid = true;
+          break;
+        }
+      }
+
+      if (!valid) window.alert("Invalid Username or Password");
+      else {
+        router.push("/allLocations");
+      }
+    },
+  },
 };
 </script>
 
