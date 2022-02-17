@@ -48,6 +48,57 @@
   </div>
 </template>
 
+<script>
+import UserService from "../UserService";
+import router from "@/router";
+
+export default {
+  name: "SignUp",
+  data() {
+    return {
+      userName: "",
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    async submit() {
+      console.log("signed");
+      let users = null;
+      let duplicate = false;
+
+      try {
+        users = await UserService.getUsers();
+        users = users.data;
+        console.log(users);
+      } catch (err) {
+        window.alert(err);
+      }
+
+      console.log(users.length);
+
+      for (let i = 0; i < users.length; i++) {
+        console.log("username and email", users[i].userName);
+        if (
+          users[i].userName == this.userName ||
+          users[i].email == this.email
+        ) {
+          duplicate = true;
+          break;
+        }
+      }
+
+      if (duplicate) window.alert("Username or Email already taken");
+      else {
+        await UserService.postUser(this.userName, this.email, this.password);
+        window.alert("Account Created! Login to Continue.");
+        router.push("/login");
+      }
+    },
+  },
+};
+</script>
+
 <style scoped>
 .card {
   width: 26rem;
