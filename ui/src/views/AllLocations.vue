@@ -37,7 +37,7 @@ export default {
     }
 
     for (let i = 0; i < titles.length; i++) {
-      this.titles.push(titles[i].name);
+      this.titles.push(titles[i].locationName);
       console.log(this.titles);
     }
   },
