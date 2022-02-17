@@ -4,24 +4,28 @@
       <div class="card-header">
         <span>SIGN UP</span>
       </div>
-      <form>
+      <form @submit.prevent="submit">
         <div class="form-group">
           <label for="username">Username</label>
           <input
+            v-model="userName"
             type="text"
             class="form-control"
             id="username"
             placeholder="Username"
+            required
           />
         </div>
         <div class="form-group">
           <label for="email">Email ID</label>
           <input
+            v-model="email"
             type="email"
             class="form-control"
             id="email"
             aria-describedby="emailHelp"
             placeholder="Email ID"
+            required
           />
           <small id="emailHelp" class="form-text text-muted"
             >We'll never share your email with anyone else.</small
@@ -30,20 +34,19 @@
         <div class="form-group">
           <label for="password">Password</label>
           <input
+            v-model="password"
             type="password"
             class="form-control"
             id="password"
             placeholder="Password"
+            required
           />
         </div>
-        <router-link to="/allLocations" tag="button">
-          <button class="button">Sign Up</button>
-        </router-link>
+        <button class="button" type="submit">Sign Up</button>
       </form>
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .card {
