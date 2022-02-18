@@ -1,4 +1,3 @@
 module.exports = {
-    outDir : "../../documentatui"
-  }
-  
+  outDir: "../../documentatui",
+};
