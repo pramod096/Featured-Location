@@ -73,3 +73,27 @@
     </div>
   </div>
 </template>
+
+<script>
+import LocationService from "../LocationService";
+import router from "@/router";
+
+export default {
+  name: "EditLocation",
+  data() {
+    return {
+      id: "",
+      locationName: "",
+      address: "",
+      hours: "",
+      phoneNumber: "",
+    };
+  },
+  methods: {
+    async submit() {
+      await LocationService.patchLocation(new FormData(locationForm));
+      console.log("form dat ----", new FormData(locationForm));
+    },
+  },
+};
+</script>
