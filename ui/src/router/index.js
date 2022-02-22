@@ -4,6 +4,7 @@ import AllLocations from "../views/AllLocations";
 import Login from "../views/Login";
 import SignUp from "../views/SignUp.vue";
 import AddLocation from "../views/AddLocation.vue";
+import EditLocation from "../views/EditLocation.vue"
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     name: "AddLocation",
     component: AddLocation,
   },
+  {
+    path: "/editLocation",
+    name: "EditLocation",
+    component: EditLocation
+  }
 ];
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
