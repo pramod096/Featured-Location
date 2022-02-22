@@ -11,7 +11,7 @@
     <div class="col-sm-3">
       <a
         class="link"
-        href="https://github.com/pramod096/Proposal-4B/projects/1"
+        href="https://github.com/pramod096/Featured-Location/projects/1"
         target="_blank"
         >Board</a
       >
