@@ -1,6 +1,6 @@
 # Featured-Location
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5d020a6bfb284da1b74330987dba44f8)](https://www.codacy.com/gh/pramod096/Featured-Location/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pramod096/Featured-Location&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5d020a6bfb284da1b74330987dba44f8)](https://www.codacy.com/gh/pramod096/Featured-Location/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pramod096/Featured-Location&amp;utm_campaign=Badge_Grade) [![Known Vulnerabilities](https://snyk.io/test/github/pramod096/Featured-Location/badge.svg)](https://snyk.io/test/github/pramod096/Featured-Location)
 
 #### Website Development [**_Proposal_**](https://github.com/pramod096/Proposal-4B/blob/main/Proposal.md) for Featured Location [**_RFP_**](https://github.com/KeerthiMuli/featured-locations)
 
