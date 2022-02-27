@@ -95,16 +95,40 @@ router.put("/", multerUploads, async (req, res) => {
           photo: image,
         },
       }
-    );
+    ).then(() => {
+      res.status(201).send();
+    }).catch((err) => {
+    console.log(err)
+    })
   }
 });
+
+router.patch("/", async(req, res) => {
+  const locations = await getLocationsCollection();
+  await locations.updateOne(
+    { _id: mongodb.ObjectId(req.body._id) },
+    {
+      $set: {
+        likeCount: req.body.likeCount
+      },
+    }
+  ).then(() => {
+    res.status(201).send()
+  }).catch((err) => {
+   console.log(err)
+  })
+})
 
 router.delete("/", async (req, res) => {
   const locations = await getLocationsCollection();
   await locations.deleteOne({
     _id: req.body._id,
-  });
-  res.status(201).send();
+  }).then(() => {
+
+    res.status().send();
+  }).catch((err) => {
+    window.alert(err)
+  })
 });
 
 async function getLocationsCollection() {
