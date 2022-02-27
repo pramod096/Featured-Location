@@ -1,7 +1,7 @@
 <template>
   <div class="conatiner">
     <div class="list" v-for="location in locations" :key="location">
-      <SingleList :title="location.locationName"  @click="openCard(location)" />
+      <SingleList :title="location.locationName" @click="openCard(location)" />
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   name: "AllLocations",
   data() {
     return {
-      locations: [ {locationName: "NWMSU"}]
+      locations: [{ locationName: "NWMSU" }],
     };
   },
 
@@ -37,7 +37,7 @@ export default {
 
   methods: {
     async openCard(location) {
-      sessionStorage.setItem('currentLocation', JSON.stringify(location))
+      sessionStorage.setItem("currentLocation", JSON.stringify(location));
       router.push("/");
     },
   },

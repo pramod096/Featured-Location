@@ -2,9 +2,13 @@
   <div class="container text-center">
     <div class="card mx-auto">
       <div class="card-header">
-        <span contenteditable="true">{{currentLocation.locationName}}</span>
+        <span contenteditable="true">{{ currentLocation.locationName }}</span>
       </div>
-      <img v-bind:src="currentLocation.photo" style="height: 300px" alt="Location Image"/>
+      <img
+        v-bind:src="currentLocation.photo"
+        style="height: 300px"
+        alt="Location Image"
+      />
       <div class="detail" style="margin-top: 1rem">
         Address: {{ currentLocation.address }}
       </div>
@@ -50,7 +54,8 @@ export default {
         _id: "",
       },
       locations: [],
-    };`   `
+    };
+    `   `;
   },
   async mounted() {
     this.currentLocation = await JSON.parse(
@@ -61,24 +66,26 @@ export default {
       try {
         titles = await LocationService.getLocations();
         titles = titles.data;
-        console.log("array" ,titles);
+        console.log("array", titles);
       } catch (err) {
         console.log(err);
       }
 
       for (let i = 0; i < titles.length; i++) {
         this.locations.push(titles[i]);
-        
       }
 
       const random = Math.floor(Math.random() * titles.length);
-      this.currentLocation = this.locations[random]
-      sessionStorage.setItem('currentLocation', JSON.stringify(this.currentLocation))
+      this.currentLocation = this.locations[random];
+      sessionStorage.setItem(
+        "currentLocation",
+        JSON.stringify(this.currentLocation)
+      );
       console.log("here --", this.currentLocation);
       this.currentLocation._id = this.currentLocation._id;
     }
   },
-  
+
   methods: {
     async likeButton() {
       this.currentLocation.likeCount += 1;
