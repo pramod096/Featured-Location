@@ -14,6 +14,13 @@
           <router-link to="/" tag="button">
             <button class="button" v-if="!null">Home</button>
           </router-link>
+          
+          <router-link to="/editLocation" tag="button">
+            <button class="button" v-if="authenticated && !this.loading">Edit</button>
+          </router-link>
+           <router-link to="/addLocation" tag="button">
+            <button class="button" v-if="authenticated && !this.loading">Add</button>
+          </router-link>
           <router-link
             to="/SignUp"
             tag="button"
