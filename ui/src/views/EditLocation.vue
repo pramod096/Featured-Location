@@ -91,6 +91,10 @@ export default {
   },
   methods: {
     async submit() {
+        /**
+     * @vuese
+     * Takes in the edited Location form data and sends it to the patch Loation Api to update the selected location.
+     */
       await LocationService.patchLocation(new FormData(locationForm));
       console.log("form dat ----", new FormData(locationForm));
     },

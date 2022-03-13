@@ -51,12 +51,11 @@ export default {
     };
   },
   methods: {
-    /**
-     * @vuese
-     * Used to manually clear the form
-     * @arg The argument is a boolean value representing xxx
-     */
     async submit() {
+       /**
+     * @vuese
+     * Checks the user credentials and logs in the user.
+     */
       console.log("signed");
       let users = null;
       let valid = false;
