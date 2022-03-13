@@ -24,7 +24,7 @@ class LocationService {
   }
 
   static async likeIncrease(currenLocation) {
-      axios.patch(url, currenLocation);
+    axios.patch(url, currenLocation);
   }
 }
 

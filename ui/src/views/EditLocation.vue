@@ -60,12 +60,7 @@
         </div>
         <div class="form-group">
           <label for="photo">Upload Image</label>
-          <input
-            type="file"
-            class="form-control"
-            name="photo"
-            id="photo"
-          />
+          <input type="file" class="form-control" name="photo" id="photo" />
         </div>
         <button class="button" type="submit">Save</button>
       </form>
@@ -87,32 +82,32 @@ export default {
       address: "",
       hours: "",
       phoneNumber: "",
-      likeCount: 0
+      likeCount: 0,
     };
   },
   async mounted() {
-         this.editLocation = await JSON.parse(
+    this.editLocation = await JSON.parse(
       sessionStorage.getItem("currentLocation")
     );
-     this._id = this.editLocation._id;
-      this.locationName = this.editLocation.locationName;
-       this.address = this.editLocation.address;
-        this.hours = this.editLocation.hours;
-         this.phoneNumber = this.editLocation.phoneNumber;
-         this.photo = this.editLocation.photo;
+    this._id = this.editLocation._id;
+    this.locationName = this.editLocation.locationName;
+    this.address = this.editLocation.address;
+    this.hours = this.editLocation.hours;
+    this.phoneNumber = this.editLocation.phoneNumber;
+    this.photo = this.editLocation.photo;
   },
   methods: {
     async submit() {
-       /**
+      /**
        * @vuese
        * Takes in the edited Location form data and sends it to the patch Loation Api to update the selected location.
        */
       let editL = new FormData(locationForm);
-      editL.append('_id', this._id);
-      editL.append('photo', this.photo)
+      editL.append("_id", this._id);
+      editL.append("photo", this.photo);
       await LocationService.putLocation(editL);
       console.log("form dat ----", editL);
-      router.push('/allLocations')
+      router.push("/allLocations");
     },
   },
 };
