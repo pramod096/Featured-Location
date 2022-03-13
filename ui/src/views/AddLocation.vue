@@ -90,6 +90,7 @@ export default {
   },
   methods: {
     async submit() {
+      
       await LocationService.postLocation(new FormData(locationForm));
       console.log("form dat ----", new FormData(locationForm));
     },
