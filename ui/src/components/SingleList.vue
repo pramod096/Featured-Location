@@ -12,6 +12,7 @@
 export default {
   name: "SingleList",
   props: {
+    // Stores the title of each location
     title: String,
   },
 };
