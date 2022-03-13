@@ -1,3 +1,3 @@
 module.exports = {
-  outDir: "../../documentatui",
+  outDir: "../../vuese-featuredlocation-doc",
 };

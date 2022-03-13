@@ -103,6 +103,10 @@ export default {
   },
   methods: {
     async submit() {
+       /**
+       * @vuese
+       * Takes in the edited Location form data and sends it to the patch Loation Api to update the selected location.
+       */
       let editL = new FormData(locationForm);
       editL.append('_id', this._id);
       editL.append('photo', this.photo)

@@ -84,51 +84,59 @@ router.put("/", multerUploads, async (req, res) => {
       );
   } else {
     image = req.body.photo;
-    await locations.updateOne(
-      { _id: mongodb.ObjectId(req.body._id) },
-      {
-        $set: {
-          locationName: req.body.locationName,
-          address: req.body.address,
-          hours: req.body.hours,
-          phoneNumber: req.body.phoneNumber,
-          photo: image,
-        },
-      }
-    ).then(() => {
-      res.status(201).send();
-    }).catch((err) => {
-    console.log(err)
-    })
+    await locations
+      .updateOne(
+        { _id: mongodb.ObjectId(req.body._id) },
+        {
+          $set: {
+            locationName: req.body.locationName,
+            address: req.body.address,
+            hours: req.body.hours,
+            phoneNumber: req.body.phoneNumber,
+            photo: image,
+          },
+        }
+      )
+      .then(() => {
+        res.status(201).send();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 });
 
-router.patch("/", async(req, res) => {
+router.patch("/", async (req, res) => {
   const locations = await getLocationsCollection();
-  await locations.updateOne(
-    { _id: mongodb.ObjectId(req.body._id) },
-    {
-      $set: {
-        likeCount: req.body.likeCount
-      },
-    }
-  ).then(() => {
-    res.status(201).send()
-  }).catch((err) => {
-   console.log(err)
-  })
-})
+  await locations
+    .updateOne(
+      { _id: mongodb.ObjectId(req.body._id) },
+      {
+        $set: {
+          likeCount: req.body.likeCount,
+        },
+      }
+    )
+    .then(() => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 router.delete("/", async (req, res) => {
   const locations = await getLocationsCollection();
-  await locations.deleteOne({
-    _id: req.body._id,
-  }).then(() => {
-
-    res.status().send();
-  }).catch((err) => {
-    window.alert(err)
-  })
+  await locations
+    .deleteOne({
+      _id: req.body._id,
+    })
+    .then(() => {
+      res.status().send();
+    })
+    .catch((err) => {
+      window.alert(err);
+    });
 });
 
 async function getLocationsCollection() {

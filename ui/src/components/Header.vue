@@ -68,6 +68,10 @@ export default {
     };
   },
   async mounted() {
+    /**
+     * @vuese
+     * Checks whether a user is authenticated or not, everytime the app is reloaded.
+     */
     this.auth0 = await this.$auth0;
 
     this.data = await this.auth0.getUser();
@@ -92,6 +96,10 @@ export default {
 
   methods: {
     async login() {
+      /**
+       * @vuese
+       * Redirects the user to login page.
+       */
       try {
         await this.auth0.loginWithPopup({});
       } catch (e) {
@@ -110,6 +118,10 @@ export default {
     },
 
     async logout() {
+      /**
+       * @vuese
+       * Logs out the users.
+       */
       await this.auth0.logout({});
 
       this.data = await this.auth0.getUser();
