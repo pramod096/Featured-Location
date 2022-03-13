@@ -58,7 +58,7 @@ export default {
     `   `;
   },
   async mounted() {
-        /**
+    /**
      * @vuese
      * Gets all the information about the user selected location from the list and displays dynamically, if not selected by the user, the location is displayed randomly.
      */
@@ -92,10 +92,10 @@ export default {
 
   methods: {
     async likeButton() {
-          /**
-     * @vuese
-     * Increases the like count of current Location.
-     */
+      /**
+       * @vuese
+       * Increases the like count of current Location.
+       */
       this.currentLocation.likeCount += 1;
       await LocationService.likeIncrease(this.currentLocation);
     },
