@@ -250,7 +250,19 @@ export default {
       }
     },
 
-  
+    async deleteLocation() {
+      if (this.passcode === "123") {
+        const currentLocation = await JSON.parse(
+          sessionStorage.getItem("currentLocation")
+        );
+        await LocationService.deleteLocation(currentLocation);
+        sessionStorage.removeItem("currentLocation");
+        window.alert("Location Deleted Successfully");
+        router.go("/");
+      } else {
+        window.alert("Invalid Passcode");
+      }
+    },
 
     async editLocation() {
       if(this.passcode === "123"){
