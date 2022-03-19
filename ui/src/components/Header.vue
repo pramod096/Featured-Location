@@ -14,6 +14,86 @@
           <router-link to="/" tag="button">
             <button class="button" v-if="!null">Home</button>
           </router-link>
+
+         
+            <button class="button" v-if="authenticated && !this.loading"    data-toggle="modal"
+            data-target="#edit">
+              Edit
+            </button>
+        
+            
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="button"
+            v-if="authenticated && !this.loading"
+            data-toggle="modal"
+            data-target="#delete"
+          >
+            Delete
+          </button>
+
+          <div
+            class="modal fade"
+            id="delete"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="deleteModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Enter Passcode to Delete Location
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Cancel"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="passcode" class="col-form-label">Passcode:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passcode"
+                    v-model="passcode"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-dismiss="modal"
+                    @click="deleteLocation"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <router-link to="/addLocation" tag="button">
+            <button class="button" v-if="authenticated && !this.loading">
+              Add
+            </button>
+          </router-link>
           <router-link
             to="/SignUp"
             tag="button"
@@ -44,8 +124,8 @@
 </template>
 
 <script>
-import createAuth0Client from "@auth0/auth0-spa-js";
-import config from "../../auth_config.json";
+import router from "../router";
+import LocationService from "../LocationService";
 export default {
   name: "Header",
   data() {
@@ -54,9 +134,14 @@ export default {
       data: null,
       loading: true,
       authenticated: false,
+      passcode: "",
     };
   },
   async mounted() {
+    /**
+     * @vuese
+     * Checks whether a user is authenticated or not, everytime the app is reloaded.
+     */
     this.auth0 = await this.$auth0;
 
     this.data = await this.auth0.getUser();
@@ -81,6 +166,10 @@ export default {
 
   methods: {
     async login() {
+      /**
+       * @vuese
+       * Redirects the user to login page.
+       */
       try {
         await this.auth0.loginWithPopup({});
       } catch (e) {
@@ -99,6 +188,10 @@ export default {
     },
 
     async logout() {
+      /**
+       * @vuese
+       * Logs out the users.
+       */
       await this.auth0.logout({});
 
       this.data = await this.auth0.getUser();
@@ -109,6 +202,10 @@ export default {
         this.authenticated = true;
       }
     },
+
+  
+
+
   },
 };
 </script>
@@ -123,6 +220,7 @@ export default {
   font-weight: bold;
   padding: 1rem;
   font-size: 1.1rem;
+  width: fit-content;
   margin: 0.5rem;
   border: none;
   outline: none;
@@ -156,4 +254,4 @@ export default {
   text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
     -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
-</style>
+</style
