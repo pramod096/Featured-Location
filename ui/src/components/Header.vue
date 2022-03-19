@@ -252,7 +252,13 @@ export default {
 
   
 
-
+    async editLocation() {
+      if(this.passcode === "123"){
+      await router.push('/editLocation')
+      } else {
+        window.alert("Invalid Passcode");
+      }
+    }
   },
 };
 </script>
