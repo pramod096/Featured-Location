@@ -38,12 +38,7 @@ router.post("/", multerUploads, async (req, res) => {
           hours: req.body.hours,
           phoneNumber: req.body.phoneNumber,
           photo: image,
-        });
-        return res.status(200).json({
-          messge: "Your image has been uploded successfully to cloudinary",
-          data: {
-            image,
-          },
+          likeCount: 0,
         });
       })
       .catch((err) =>
@@ -57,12 +52,91 @@ router.post("/", multerUploads, async (req, res) => {
   }
 });
 
+router.put("/", multerUploads, async (req, res) => {
+  const locations = await getLocationsCollection();
+  let image = "";
+  if (!(req.file == undefined)) {
+    const file = "data:image/png;base64," + req.file.buffer.toString("base64");
+    return uploader
+      .upload(file)
+      .then(async (result) => {
+        image = result.url;
+        await locations.updateOne(
+          { _id: mongodb.ObjectId(req.body._id) },
+          {
+            $set: {
+              locationName: req.body.locationName,
+              address: req.body.address,
+              hours: req.body.hours,
+              phoneNumber: req.body.phoneNumber,
+              photo: image,
+            },
+          }
+        );
+      })
+      .catch((err) =>
+        res.status(400).json({
+          messge: "someting went wrong while processing your request",
+          data: {
+            err,
+          },
+        })
+      );
+  } else {
+    image = req.body.photo;
+    await locations
+      .updateOne(
+        { _id: mongodb.ObjectId(req.body._id) },
+        {
+          $set: {
+            locationName: req.body.locationName,
+            address: req.body.address,
+            hours: req.body.hours,
+            phoneNumber: req.body.phoneNumber,
+            photo: image,
+          },
+        }
+      )
+      .then(() => {
+        res.status(201).send();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+});
+
+router.patch("/", async (req, res) => {
+  const locations = await getLocationsCollection();
+  await locations
+    .updateOne(
+      { _id: mongodb.ObjectId(req.body._id) },
+      {
+        $set: {
+          likeCount: req.body.likeCount,
+        },
+      }
+    )
+    .then(() => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.delete("/", async (req, res) => {
   const locations = await getLocationsCollection();
-  await locations.deleteOne({
-    _id: req.body._id,
-  });
-  res.status(201).send();
+  await locations
+    .deleteOne({
+      _id: req.body._id,
+    })
+    .then(() => {
+      res.status().send();
+    })
+    .catch((err) => {
+      window.alert(err);
+    });
 });
 
 async function getLocationsCollection() {

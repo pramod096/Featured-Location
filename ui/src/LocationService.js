@@ -18,6 +18,14 @@ class LocationService {
   static async postLocation(formData) {
     axios.post(url, formData);
   }
+
+  static async putLocation(formData) {
+    axios.put(url, formData);
+  }
+
+  static async likeIncrease(currenLocation) {
+    axios.patch(url, currenLocation);
+  }
 }
 
 export default LocationService;
