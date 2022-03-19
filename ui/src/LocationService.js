@@ -4,7 +4,9 @@ import axios from "axios";
 const url = "api/locations";
 
 class LocationService {
+
   static async getLocations() {
+ 
     const res = new Promise((resolve) => {
       setTimeout(() => resolve(axios.get(url)));
     });
@@ -15,16 +17,29 @@ class LocationService {
 
     return data;
   }
+
   static async postLocation(formData) {
+ 
     axios.post(url, formData);
+ 
   }
 
   static async putLocation(formData) {
+  
     axios.put(url, formData);
+  
   }
 
-  static async likeIncrease(currenLocation) {
-    axios.patch(url, currenLocation);
+  static async deleteLocation(deleteL) {
+ 
+    axios.delete(url, { data: { _id: deleteL } });
+   
+  }
+
+  static async likeIncrease(currentLocation) {
+   
+    axios.patch(url, currentLocation);
+  
   }
 }
 
