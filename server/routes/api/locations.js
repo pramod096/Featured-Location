@@ -106,8 +106,24 @@ router.put("/", multerUploads, async (req, res) => {
   }
 });
 
+router.delete("/", async (req, res) => {
+  const locations = await getLocationsCollection();
+  console.log("JS --- ", req.body);
+  await locations
+    .deleteOne({
+      _id: mongodb.ObjectId(req.body._id._id),
+    })
+    .then(() => {
+      res.status().send();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.patch("/", async (req, res) => {
   const locations = await getLocationsCollection();
+  console.log("like --- ", req);
   await locations
     .updateOne(
       { _id: mongodb.ObjectId(req.body._id) },
@@ -122,20 +138,6 @@ router.patch("/", async (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-    });
-});
-
-router.delete("/", async (req, res) => {
-  const locations = await getLocationsCollection();
-  await locations
-    .deleteOne({
-      _id: req.body._id,
-    })
-    .then(() => {
-      res.status().send();
-    })
-    .catch((err) => {
-      window.alert(err);
     });
 });
 
