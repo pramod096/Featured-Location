@@ -21,7 +21,54 @@
               Edit
             </button>
         
-            
+            <div
+            class="modal fade"
+            id="edit"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="editModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editModalLabel">
+                    Enter Passcode to Edit Location
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Cancel"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="passcode" class="col-form-label">Passcode:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passcode"
+                    v-model="passcode"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-dismiss="modal"
+                    @click="editLocation()"
+                  >
+                    Edit
+                  </button>
                 </div>
               </div>
             </div>
