@@ -188,10 +188,10 @@ export default {
     };
   },
 
-    /**
-     * @vuese
-     * Checks whether a user is authenticated or not, everytime the app is reloaded.
-     */
+  /**
+   * @vuese
+   * Checks whether a user is authenticated or not, everytime the app is reloaded.
+   */
   async mounted() {
     this.auth0 = await this.$auth0;
 
@@ -216,10 +216,10 @@ export default {
   // console.log(this.data);
 
   methods: {
-       /**
-       * @vuese
-       * Logs in the user using GitHub and auth0.
-       */
+    /**
+     * @vuese
+     * Logs in the user using GitHub and auth0.
+     */
     async login() {
       try {
         await this.auth0.loginWithPopup({});
@@ -238,10 +238,10 @@ export default {
       }
     },
 
-  /**
-       * @vuese
-       * Logs out the users.
-       */
+    /**
+     * @vuese
+     * Logs out the users.
+     */
     async logout() {
       await this.auth0.logout({});
 
@@ -254,10 +254,10 @@ export default {
       }
     },
 
-      /**
-       * @vuese
-       * Delets the current location from the database.
-       */
+    /**
+     * @vuese
+     * Delets the current location from the database.
+     */
     async deleteLocation() {
       if (this.passcode === "123") {
         const currentLocation = await JSON.parse(
@@ -272,10 +272,10 @@ export default {
       }
     },
 
-     /**
-       * @vuese
-       * Redirects the user to edit page.
-       */
+    /**
+     * @vuese
+     * Redirects the user to edit page.
+     */
     async editLocation() {
       if (this.passcode === "123") {
         await router.push("/editLocation");
