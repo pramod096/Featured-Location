@@ -1,6 +1,17 @@
 # Featured-Location
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5d020a6bfb284da1b74330987dba44f8)](https://www.codacy.com/gh/pramod096/Featured-Location/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pramod096/Featured-Location&amp;utm_campaign=Badge_Grade) [![Known Vulnerabilities](https://snyk.io/test/github/pramod096/Featured-Location/badge.svg)](https://snyk.io/test/github/pramod096/Featured-Location)
+<p>
+     <a target="_blank" rel="noopener noreferrer" href="https://pramod096.github.io/vuese-featuredlocation-doc/">
+    <img alt="Documentation" src="https://img.shields.io/badge/Documentation-%2341B883.svg?style=flat&logo=Vue.js&logoColor=white"/>
+        </a>
+  &emsp;
+    <a target="_blank" rel="noopener noreferrer" href="https://pramod096.github.io/jest-testcoverage-featuredlocation/">
+    <img alt="Code Coverage" src="https://img.shields.io/badge/Code Coverage%20-%23E34F26.svg?logo=jest&logoColor=white">
+      </a>
+   &emsp;
+      <a target="_blank" rel="noopener noreferrer" href="https://pramod096.github.io/swagger-featuredlocation-doc/">
+    <img alt="Swagger" src="https://img.shields.io/badge/Swagger-%234DB33D.svg?style=flat&logo=swagger&logoColor=white"/>
+        </a>
+</p>
 
 #### Website Development [**_Proposal_**](https://github.com/pramod096/Proposal-4B/blob/main/Proposal.md) for Featured Location [**_RFP_**](https://github.com/KeerthiMuli/featured-locations)
 
