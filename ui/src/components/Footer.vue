@@ -49,5 +49,6 @@
 
 .container {
   padding: 2%;
+  text-align: center;
 }
 </style>
