@@ -6,7 +6,7 @@
       </div>
       <img
         v-bind:src="currentLocation.photo"
-        style="height: 300px"
+        style="height: 300px; width: 26rem"
         alt="Location Image"
       />
       <div class="detail" style="margin-top: 1rem">
@@ -65,7 +65,7 @@ export default {
     this.currentLocation = await JSON.parse(
       sessionStorage.getItem("currentLocation")
     );
-    if (this.currentLocation == null) {
+    if (this.currentLocation === null) {
       let titles = null;
       try {
         titles = await LocationService.getLocations();
@@ -90,6 +90,10 @@ export default {
     }
   },
 
+  async onactivated() {
+    this.mounted();
+  },
+
   methods: {
     async likeButton() {
       /**
@@ -110,7 +114,7 @@ export default {
   height: 35rem;
   font-weight: bold;
   font-size: 0.9rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   border: none;
   outline: none;
   border-radius: 22px;
@@ -121,7 +125,7 @@ export default {
 
 .card-header {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   border: none;
   outline: none;
   border-top-left-radius: 22px;

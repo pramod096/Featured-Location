@@ -76,7 +76,7 @@
 
 <script>
 import LocationService from "../LocationService";
-import router from "@/router";
+import router from "../router";
 
 export default {
   name: "SignUp",
@@ -95,7 +95,8 @@ export default {
        * Takes in the Location form data and sends it to the post Loation Api.
        */
       await LocationService.postLocation(new FormData(locationForm));
-      console.log("form dat ----", new FormData(locationForm));
+      window.alert("Location Added Successfully");
+      await router.push("/allLocations");
     },
   },
 };
