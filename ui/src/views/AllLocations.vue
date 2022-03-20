@@ -41,11 +41,7 @@ export default {
   },
 
   async onActivated() {
-<<<<<<< HEAD
      this.mounted();
-=======
-    this.mounted();
->>>>>>> c135ee4c833f106b55dc6e6c479c5caab4555cd7
   },
 
   methods: {
