@@ -187,11 +187,12 @@ export default {
       passcode: "",
     };
   },
-  async mounted() {
+
     /**
      * @vuese
      * Checks whether a user is authenticated or not, everytime the app is reloaded.
      */
+  async mounted() {
     this.auth0 = await this.$auth0;
 
     this.data = await this.auth0.getUser();
@@ -215,11 +216,11 @@ export default {
   // console.log(this.data);
 
   methods: {
-    async login() {
-      /**
+       /**
        * @vuese
-       * Redirects the user to login page.
+       * Logs in the user using GitHub and auth0.
        */
+    async login() {
       try {
         await this.auth0.loginWithPopup({});
       } catch (e) {
@@ -237,11 +238,11 @@ export default {
       }
     },
 
-    async logout() {
-      /**
+  /**
        * @vuese
        * Logs out the users.
        */
+    async logout() {
       await this.auth0.logout({});
 
       this.data = await this.auth0.getUser();
@@ -253,6 +254,10 @@ export default {
       }
     },
 
+      /**
+       * @vuese
+       * Delets the current location from the database.
+       */
     async deleteLocation() {
       if (this.passcode === "123") {
         const currentLocation = await JSON.parse(
@@ -267,6 +272,10 @@ export default {
       }
     },
 
+     /**
+       * @vuese
+       * Redirects the user to edit page.
+       */
     async editLocation() {
       if (this.passcode === "123") {
         await router.push("/editLocation");
@@ -286,13 +295,13 @@ export default {
 
 .button {
   font-weight: bold;
-  padding: 1rem;
-  font-size: 1.1rem;
-  width: fit-content;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  width: 60px;
   margin: 0.5rem;
   border: none;
   outline: none;
-  border-radius: 22px;
+  border-radius: 12px;
   background-color: #e0e5ec;
   box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
     -9px -9px 16px rgba(255, 255, 255, 0.5);
@@ -316,7 +325,7 @@ export default {
 
 .logo {
   color: #363233;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-family: Luminari, fantasy;
   font-weight: 100;
   text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),

@@ -62,6 +62,10 @@ export default {
     };
   },
   methods: {
+        /**
+       * @vuese
+       * Sends the new user credentials to the data and registers the user.
+       */
     async submit() {
       console.log("signed");
       let users = null;

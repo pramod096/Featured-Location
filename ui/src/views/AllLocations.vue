@@ -10,7 +10,7 @@
 import LocationService from "../LocationService";
 import SingleList from "../components/SingleList.vue";
 import router from "@/router";
-import { onActivated } from '@vue/runtime-core';
+import { onActivated } from "@vue/runtime-core";
 export default {
   components: { SingleList },
   name: "AllLocations",
@@ -20,11 +20,11 @@ export default {
     };
   },
 
-  async mounted() {
-    /**
+/**
      * @vuese
      * Gets all the locations from the Get Locations API and updates the location list on every page reload.
      */
+  async mounted() {
     let titles = null;
     try {
       titles = await LocationService.getLocations();
@@ -41,15 +41,15 @@ export default {
   },
 
   async onActivated() {
-     this.mounted();
+    this.mounted();
   },
 
   methods: {
-    async openCard(location) {
-      /**
+       /**
        * @vuese
        * Redirects the user to a details view of the user selected location from the list.
        */
+    async openCard(location) {
       sessionStorage.setItem("currentLocation", JSON.stringify(location));
       await router.push("/");
     },
