@@ -11,6 +11,14 @@
       <a target="_blank" rel="noopener noreferrer" href="https://pramod096.github.io/swagger-featuredlocation-doc/">
     <img alt="Swagger" src="https://img.shields.io/badge/Swagger-%234DB33D.svg?style=flat&logo=swagger&logoColor=white"/>
         </a>
+     &emsp;
+      <a target="_blank" rel="noopener noreferrer" href="https://www.codacy.com/gh/pramod096/Featured-Location/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pramod096/Featured-Location&amp;utm_campaign=Badge_Grade">
+    <img alt="Codacy" src="https://img.shields.io/badge/Code Quality-%33880ff.svg?style=flat&logo=codacy&logoColor=white"/>
+        </a>
+   &emsp;
+        <a target="_blank" rel="noopener noreferrer" href="https://snyk.io/test/github/pramod096/Featured-Location">
+    <img alt="Snyk" src="https://img.shields.io/badge/Vulnerabilities%20-%2314354C.svg?style=flat&logo=snyk&logoColor=white"/>
+          </a>
 </p>
 
 #### Website Development [**_Proposal_**](https://github.com/pramod096/Proposal-4B/blob/main/Proposal.md) for Featured Location [**_RFP_**](https://github.com/KeerthiMuli/featured-locations)
