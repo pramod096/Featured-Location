@@ -294,13 +294,13 @@ export default {
 
 .button {
   font-weight: bold;
-  padding: 1rem;
-  font-size: 1.1rem;
-  width: fit-content;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  width: 60px;
   margin: 0.5rem;
   border: none;
   outline: none;
-  border-radius: 22px;
+  border-radius: 12px;
   background-color: #e0e5ec;
   box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
     -9px -9px 16px rgba(255, 255, 255, 0.5);
@@ -324,7 +324,7 @@ export default {
 
 .logo {
   color: #363233;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-family: Luminari, fantasy;
   font-weight: 100;
   text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
