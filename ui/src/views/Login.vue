@@ -51,10 +51,10 @@ export default {
     };
   },
   methods: {
-      /**
-       * @vuese
-       * Checks the user credentials and logs in the user.
-       */
+    /**
+     * @vuese
+     * Checks the user credentials and logs in the user.
+     */
     async submit() {
       console.log("signed");
       let users = null;
