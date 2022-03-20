@@ -15,13 +15,16 @@
             <button class="button" v-if="!null">Home</button>
           </router-link>
 
-         
-            <button class="button" v-if="authenticated && !this.loading"    data-toggle="modal"
-            data-target="#edit">
-              Edit
-            </button>
-        
-            <div
+          <button
+            class="button"
+            v-if="authenticated && !this.loading"
+            data-toggle="modal"
+            data-target="#edit"
+          >
+            Edit
+          </button>
+
+          <div
             class="modal fade"
             id="edit"
             tabindex="-1"
@@ -265,12 +268,12 @@ export default {
     },
 
     async editLocation() {
-      if(this.passcode === "123"){
-      await router.push('/editLocation')
+      if (this.passcode === "123") {
+        await router.push("/editLocation");
       } else {
         window.alert("Invalid Passcode");
       }
-    }
+    },
   },
 };
 </script>

@@ -106,7 +106,7 @@ export default {
       editL.append("_id", this._id);
       editL.append("photo", this.photo);
       await LocationService.putLocation(editL);
-      window.alert("Location Edited!")
+      window.alert("Location Edited!");
       await router.push("/allLocations");
     },
   },
