@@ -62,6 +62,10 @@ export default {
     };
   },
   methods: {
+      /**
+       * @vuese
+       * Calls the post user API to register a user credentials.
+       */
     async submit() {
       console.log("signed");
       let users = null;

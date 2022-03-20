@@ -89,11 +89,11 @@ export default {
     };
   },
   methods: {
-    async submit() {
       /**
        * @vuese
        * Takes in the Location form data and sends it to the post Loation Api.
        */
+    async submit() {
       await LocationService.postLocation(new FormData(locationForm));
       console.log("form dat ----", new FormData(locationForm));
     },

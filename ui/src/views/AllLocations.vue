@@ -19,11 +19,11 @@ export default {
     };
   },
 
-  async created() {
-    /**
+   /**
      * @vuese
      * Gets all the locations from the Get Locations API and updates the location list on every page reload.
      */
+  async created() {
     let titles = null;
     try {
       titles = await LocationService.getLocations();
@@ -40,11 +40,11 @@ export default {
   },
 
   methods: {
-    async openCard(location) {
-      /**
+       /**
        * @vuese
        * Redirects the user to a details view of the user selected location from the list.
        */
+    async openCard(location) {
       sessionStorage.setItem("currentLocation", JSON.stringify(location));
       router.push("/");
     },
