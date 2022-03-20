@@ -215,10 +215,10 @@ export default {
   // console.log(this.data);
 
   methods: {
-      /**
-       * @vuese
-       * Logs in the user using github and auth0.
-       */
+    /**
+     * @vuese
+     * Logs in the user using github and auth0.
+     */
     async login() {
       try {
         await this.auth0.loginWithPopup({});
@@ -238,9 +238,9 @@ export default {
     },
 
     /**
-       * @vuese
-       * Logs out the users.
-       */
+     * @vuese
+     * Logs out the users.
+     */
     async logout() {
       await this.auth0.logout({});
 
@@ -253,10 +253,10 @@ export default {
       }
     },
 
-      /**
-       * @vuese
-       * Deletes the current location.
-       */
+    /**
+     * @vuese
+     * Deletes the current location.
+     */
     async deleteLocation() {
       if (this.passcode === "123") {
         const currentLocation = await JSON.parse(
@@ -270,11 +270,11 @@ export default {
         window.alert("Invalid Passcode");
       }
     },
-    
-      /**
-       * @vuese
-       * Redirects to edit location page.
-       */
+
+    /**
+     * @vuese
+     * Redirects to edit location page.
+     */
     async editLocation() {
       if (this.passcode === "123") {
         await router.push("/editLocation");
