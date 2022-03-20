@@ -106,8 +106,8 @@ export default {
       editL.append("_id", this._id);
       editL.append("photo", this.photo);
       await LocationService.putLocation(editL);
-      console.log("form dat ----", editL);
-      router.push("/allLocations");
+      window.alert("Location Edited!")
+      await router.push("/allLocations");
     },
   },
 };
