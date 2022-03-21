@@ -298,6 +298,7 @@ export default {
   padding: 0.5rem;
   font-size: 0.8rem;
   width: 60px;
+  min-width: fit-content;
   margin: 0.5rem;
   border: none;
   outline: none;
