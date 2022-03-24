@@ -80,6 +80,7 @@
 
           <button
             class="button"
+            style="width: 60px"
             v-if="authenticated && !this.loading"
             data-toggle="modal"
             data-target="#delete"
@@ -155,6 +156,7 @@
 
           <button
             class="button"
+            style="width: 60px"
             @click="login"
             v-if="!authenticated && !this.loading"
           >
@@ -163,6 +165,7 @@
 
           <button
             class="button"
+            style="width: 60px"
             @click="logout"
             v-if="authenticated && !this.loading"
           >
@@ -298,7 +301,8 @@ export default {
   font-weight: bold;
   padding: 0.5rem;
   font-size: 0.8rem;
-  width: 60px;
+  min-width: fit-content;
+  /* width: 60px; */
   margin: 0.5rem;
   border: none;
   outline: none;
