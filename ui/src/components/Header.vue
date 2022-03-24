@@ -17,6 +17,7 @@
 
           <button
             class="button"
+            style="width: 60px"
             v-if="authenticated && !this.loading"
             data-toggle="modal"
             data-target="#edit"
