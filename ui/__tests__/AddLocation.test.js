@@ -6,6 +6,6 @@ describe("AddLocation", () => {
   });
 
   it("check if submit method exists to add new location", () => {
-     expect(typeof AddLocation.submit).toBe("undefined")
+    expect(typeof AddLocation.submit).toBe("undefined");
   });
 });
