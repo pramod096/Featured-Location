@@ -19,8 +19,7 @@
             class="button"
             style="width: 60px"
             v-if="authenticated && !this.loading"
-            data-toggle="modal"
-            data-target="#edit"
+            @click="editLocation()"
           >
             Edit
           </button>
@@ -33,49 +32,6 @@
             aria-labelledby="editModalLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="editModalLabel">
-                    Enter Passcode to Edit Location
-                  </h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Cancel"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <label for="passcode" class="col-form-label">Passcode:</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="passcode"
-                    v-model="passcode"
-                  />
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-dismiss="modal"
-                    @click="editLocation()"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
 
           <button
@@ -100,7 +56,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">
-                    Enter Passcode to Delete Location
+                    Confirm to Delete Location
                   </h5>
                   <button
                     type="button"
@@ -110,15 +66,6 @@
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
-                </div>
-                <div class="modal-body">
-                  <label for="passcode" class="col-form-label">Passcode:</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="passcode"
-                    v-model="passcode"
-                  />
                 </div>
                 <div class="modal-footer">
                   <button
@@ -188,7 +135,6 @@ export default {
       data: null,
       loading: true,
       authenticated: false,
-      passcode: "",
     };
   },
 
@@ -208,16 +154,7 @@ export default {
     }
 
     this.loading = false;
-
-    console.log("mounted auth0", this.auth0);
-    console.log("mounted data", this.data);
-    console.log("mounted aunthenti", this.authenticated);
   },
-  // await this.user.loginWithPopup({});
-
-  // this.data = await this.user.getUser();
-
-  // console.log(this.data);
 
   methods: {
     /**
@@ -232,8 +169,6 @@ export default {
       }
 
       this.data = await this.auth0.getUser();
-
-      console.log("login data", this.data);
 
       if (this.data == undefined) {
         this.authenticated = false;
@@ -263,7 +198,6 @@ export default {
      * Delets the current location from the database.
      */
     async deleteLocation() {
-      if (this.passcode === "123") {
         const currentLocation = await JSON.parse(
           sessionStorage.getItem("currentLocation")
         );
@@ -271,21 +205,15 @@ export default {
         sessionStorage.removeItem("currentLocation");
         window.alert("Location Deleted Successfully");
         router.go("/");
-      } else {
-        window.alert("Invalid Passcode");
-      }
-    },
+      },
 
     /**
      * @vuese
      * Redirects the user to edit page.
      */
     async editLocation() {
-      if (this.passcode === "123") {
+    
         await router.push("/editLocation");
-      } else {
-        window.alert("Invalid Passcode");
-      }
     },
   },
 };

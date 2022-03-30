@@ -11,8 +11,6 @@ class LocationService {
 
     const data = await res;
 
-    console.log(data);
-
     return data;
   }
 

@@ -11,8 +11,6 @@ class UserService {
 
     const data = await res;
 
-    console.log(data);
-
     return data;
   }
 

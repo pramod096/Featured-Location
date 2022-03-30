@@ -70,9 +70,7 @@ export default {
       try {
         titles = await LocationService.getLocations();
         titles = titles.data;
-        console.log("array", titles);
       } catch (err) {
-        console.log(err);
       }
 
       for (let i = 0; i < titles.length; i++) {
@@ -85,7 +83,6 @@ export default {
         "currentLocation",
         JSON.stringify(this.currentLocation)
       );
-      console.log("here --", this.currentLocation);
       this.currentLocation._id = this.currentLocation._id;
     }
   },

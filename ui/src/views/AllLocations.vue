@@ -29,14 +29,11 @@ export default {
     try {
       titles = await LocationService.getLocations();
       titles = titles.data;
-      console.log(titles);
     } catch (err) {
-      console.log(err);
     }
 
     for (let i = 0; i < titles.length; i++) {
       this.locations.push(titles[i]);
-      console.log(this.locations);
     }
   },
 

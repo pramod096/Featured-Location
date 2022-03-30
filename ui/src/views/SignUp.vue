@@ -67,22 +67,17 @@ export default {
      * Sends the new user credentials to the data and registers the user.
      */
     async submit() {
-      console.log("signed");
       let users = null;
       let duplicate = false;
 
       try {
         users = await UserService.getUsers();
         users = users.data;
-        console.log(users);
       } catch (err) {
         window.alert(err);
       }
 
-      console.log(users.length);
-
       for (let i = 0; i < users.length; i++) {
-        console.log("username and email", users[i].userName);
         if (
           users[i].userName == this.userName ||
           users[i].email == this.email

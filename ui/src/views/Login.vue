@@ -56,14 +56,12 @@ export default {
      * Checks the user credentials and logs in the user.
      */
     async submit() {
-      console.log("signed");
       let users = null;
       let valid = false;
 
       try {
         users = await UserService.getUsers();
         users = users.data;
-        console.log(users);
       } catch (err) {
         window.alert(err);
       }

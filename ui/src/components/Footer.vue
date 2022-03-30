@@ -29,7 +29,7 @@
       <div class="col-3">
         <a
           class="link"
-          href="https://github.com/pramod096/Featured-Location/wiki/Group-Organization"
+          href="https://github.com/pramod096/Featured-Location/wiki"
           target="_blank"
           >Wiki</a
         >
@@ -40,7 +40,7 @@
       <div class="col-3">
         <a
           class="link"
-          href="https://pramod096.github.io/swagger-featuredlocation-doc/"
+          href="https://github.com/pramod096/swagger-featuredlocation-doc"
           target="_blank"
           >Swagger</a
         >
@@ -65,7 +65,7 @@
       <div class="col-3">
         <a
           class="link"
-          href="https://pramod096.github.io/jest-testcoverage-featuredlocation/"
+          href="https://github.com/pramod096/jest-testcoverage-featuredlocation"
           target="_blank"
         >
           Code Coverage</a
