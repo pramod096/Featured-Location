@@ -100,9 +100,7 @@ router.put("/", multerUploads, async (req, res) => {
       .then(() => {
         res.status(201).send();
       })
-      .catch((err) => {
-     
-      });
+      .catch((err) => {});
   }
 });
 
@@ -115,9 +113,7 @@ router.delete("/", async (req, res) => {
     .then(() => {
       res.status().send();
     })
-    .catch((err) => {
-  
-    });
+    .catch((err) => {});
 });
 
 router.patch("/", async (req, res) => {
@@ -135,9 +131,7 @@ router.patch("/", async (req, res) => {
     .then(() => {
       res.status(201).send();
     })
-    .catch((err) => {
-
-    });
+    .catch((err) => {});
 });
 
 async function getLocationsCollection() {
