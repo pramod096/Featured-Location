@@ -31,8 +31,7 @@
             role="dialog"
             aria-labelledby="editModalLabel"
             aria-hidden="true"
-          >
-          </div>
+          ></div>
 
           <button
             class="button"
@@ -198,22 +197,21 @@ export default {
      * Delets the current location from the database.
      */
     async deleteLocation() {
-        const currentLocation = await JSON.parse(
-          sessionStorage.getItem("currentLocation")
-        );
-        await LocationService.deleteLocation(currentLocation);
-        sessionStorage.removeItem("currentLocation");
-        window.alert("Location Deleted Successfully");
-        router.go("/");
-      },
+      const currentLocation = await JSON.parse(
+        sessionStorage.getItem("currentLocation")
+      );
+      await LocationService.deleteLocation(currentLocation);
+      sessionStorage.removeItem("currentLocation");
+      window.alert("Location Deleted Successfully");
+      router.go("/");
+    },
 
     /**
      * @vuese
      * Redirects the user to edit page.
      */
     async editLocation() {
-    
-        await router.push("/editLocation");
+      await router.push("/editLocation");
     },
   },
 };
