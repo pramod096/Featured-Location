@@ -4,11 +4,11 @@
     <img alt="Documentation" src="https://img.shields.io/badge/Documentation-%2341B883.svg?style=flat&logo=Vue.js&logoColor=white"/>
         </a>
   &emsp;
-    <a target="_blank" rel="noopener noreferrer" href="https://pramod096.github.io/jest-testcoverage-featuredlocation/">
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/pramod096/jest-testcoverage-featuredlocation">
     <img alt="Code Coverage" src="https://img.shields.io/badge/Code Coverage%20-%23E34F26.svg?logo=jest&logoColor=white">
       </a>
    &emsp;
-      <a target="_blank" rel="noopener noreferrer" href="https://pramod096.github.io/swagger-featuredlocation-doc/">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/pramod096/swagger-featuredlocation-doc">
     <img alt="Swagger" src="https://img.shields.io/badge/Swagger-%234DB33D.svg?style=flat&logo=swagger&logoColor=white"/>
         </a>
      &emsp;
@@ -21,7 +21,7 @@
           </a>
 </p>
 
-#### Website Development [*Proposal](https://github.com/pramod096/Proposal-4B/blob/main/Proposal.md) for Featured Location [RFP*](https://github.com/KeerthiMuli/featured-locations/blob/main/RFP.md)
+#### Website Development [**Proposal*](https://github.com/pramod096/Proposal-4B/blob/main/Proposal.md) for Featured Location [*RFP**](https://github.com/KeerthiMuli/featured-locations/blob/main/RFP.md).
 
 A Progressive Web Application that is a City Guide for Maryville, which offers users with essential city information and also saves time. The application shows all the places to visit in Maryville and users can also suggest new locations.
 
@@ -31,6 +31,6 @@ A Progressive Web Application that is a City Guide for Maryville, which offers u
 
 ## Stack
 
-We are developing the Website with *Node.js/Express.js* for Back-end, as it is easily scalable and has high performance and *Vue.js, Bootstrap* for the Font-end.
+We are developing the Website with **Node.js/Express.js* for Back-end, as it is easily scalable and has high performance and *Vue.js*, *Bootstrap** for the Font-end.
 
-The Application development is planned using our **_[Project Board](https://github.com/pramod096/Featured-Location/projects/1)_** and our weekly progress is communicated through **_[Wiki](https://github.com/pramod096/Featured-Location/wiki)._**
+The Application development is planned using our [**Project Board*](https://github.com/pramod096/Featured-Location/projects/1), [*Issues*](https://github.com/pramod096/Featured-Location/issues), [*Milestones*](https://github.com/pramod096/Featured-Location/milestones) and our weekly progress is communicated through [*Wiki**](https://github.com/pramod096/Featured-Location/wiki).
