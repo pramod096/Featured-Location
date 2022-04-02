@@ -58,3 +58,12 @@ npm run serve
 npm run build
 ```
 
+## Test Coverage
+- Testing is done using **Jest**, which is a JavaScript testing framework maintained by Meta, designed and built by Christoph Nakazawa with a focus on simplicity and support for large web applications. It works with projects using Babel, TypeScript, Node.js, React, Angular, Vue.js and Svelte.
+- The Test Cases are written in the *&#95;&#95;tests&#95;&#95;* folder, which can be accessed from [here](https://github.com/pramod096/Featured-Location/tree/main/ui/__tests__). The output code coverage generated after executing all the test cases is directed to [Test Coverage Repo](https://github.com/pramod096/jest-testcoverage-featuredlocation).
+- From the **ui** folder, run the following command to execute tests and generate Code Coverage.
+
+```
+npm run test:unit --coverage
+```
+
