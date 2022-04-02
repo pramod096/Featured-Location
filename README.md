@@ -34,3 +34,27 @@ A Progressive Web Application that is a City Guide for Maryville, which offers u
 We are developing the Website with **Node.js/Express.js* for Back-end, as it is easily scalable and has high performance and *Vue.js*, *Bootstrap** for the Font-end.
 
 The Application development is planned using our [**Project Board*](https://github.com/pramod096/Featured-Location/projects/1), [*Issues*](https://github.com/pramod096/Featured-Location/issues), [*Milestones*](https://github.com/pramod096/Featured-Location/milestones) and our weekly progress is communicated through [*Wiki**](https://github.com/pramod096/Featured-Location/wiki).
+
+
+## Run the Application
+- To run this application, **Vue.js*, *Node.js* and *npm** must be installed.
+- Both the Frontend and Backend are configured into this single repository. The entire front-end is developed in a folder named ui.
+- Install all the necessary node packages and dependencies, by executing the command, in both the root and ui folders.
+```
+npm install
+```
+- To start the Backend, from the **root** folder, run the following command:
+```
+npm run dev
+```
+
+- Frontend can be run, by executing the command below, from the **ui** folder:
+```
+npm run serve
+```
+
+- The production ready build, can be generate with the command:
+```
+npm run build
+```
+
