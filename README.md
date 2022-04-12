@@ -31,7 +31,7 @@ A Progressive Web Application that is a City Guide for Maryville, which offers u
 
 ## Stack
 
-We are developing the Website with ***Node.js/Express.js*** for Back-end, as it is easily scalable and has high performance and ***Vue.js***, ***Bootstrap*** for the Font-end.
+We are developing the Website with ***Node.js/Express.js*** for Back-end, as it is easily scalable and has high performance and ***Vue.js***, ***Bootstrap*** for the Font-end. We implemented a CSS Technique called [***Neumorphism***](https://css-tricks.com/neumorphism-and-css/), to give a 3-Dimensional effect to all the components, which is approved by the [***Client***](https://github.com/pramod096/Proposal-4B/commit/ad34802d0f9544a9bd55aec62cfd398b300fa3a9).
 
 The Application development is planned using our [***Project Board***](https://github.com/pramod096/Featured-Location/projects/1), [***Issues***](https://github.com/pramod096/Featured-Location/issues), [***Milestones***](https://github.com/pramod096/Featured-Location/milestones) and our weekly progress is communicated through [***Wiki***](https://github.com/pramod096/Featured-Location/wiki).
 
